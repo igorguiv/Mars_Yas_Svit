@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:label="Marstek віджет"
+        android:icon="@drawable/marstek_logo"
+        android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar"
+        android:allowBackup="false">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".WidgetRings" android:exported="false" android:label="Marstek · Кільця 2×1">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_rings" />
+        </receiver>
+        <receiver android:name=".WidgetBattery" android:exported="false" android:label="Marstek · Батарея 4×1">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_battery" />
+        </receiver>
+        <receiver android:name=".WidgetLoad" android:exported="false" android:label="Marstek · Навантаження 4×1">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_load" />
+        </receiver>
+        <receiver android:name=".WidgetOutage" android:exported="false" android:label="Marstek · Відключення 4×1">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_outage" />
+        </receiver>
+        <receiver android:name=".WidgetForecast" android:exported="false" android:label="Marstek · Прогноз 4×1">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_forecast" />
+        </receiver>
+        <receiver android:name=".WidgetChart" android:exported="false" android:label="Marstek · Графік 4×1">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_chart" />
+        </receiver>
+        <receiver android:name=".WidgetPlanFact" android:exported="false" android:label="Marstek · План і факт 4×2">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_planfact" />
+        </receiver>
+    </application>
+</manifest>
